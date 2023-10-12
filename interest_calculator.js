@@ -13,9 +13,9 @@ const calculateInterest = () => {
     clearErrors();
     const interest = getInterest(loanAmount, interestRate);
     if (isFirstRowEmpty()) {
-      $("amountResult").textContent = loanAmount.toFixed(2);
-      $("rateResult").textContent = interestRate.toFixed(3);
-      $("interestResult").textContent = interest;
+      $("amountResult").textContent = '$' + loanAmount.toFixed(2);
+      $("rateResult").textContent = interestRate.toFixed(3) + '%';
+      $("interestResult").textContent = '$' + interest;
     } else {
       addNewRow(loanAmount, interestRate, interest);
     }
@@ -48,9 +48,9 @@ const addNewRow = (loanAmount, interestRate, interest) => {
   const amountResultTd = createElement("td");
   const rateResultTd = createElement("td");
   const interestResultTd = createElement("td");
-  amountResultTd.textContent = loanAmount.toFixed(2);
-  rateResultTd.textContent = interestRate.toFixed(3);
-  interestResultTd.textContent = interest;
+  amountResultTd.textContent = '$' + loanAmount.toFixed(2);
+  rateResultTd.textContent = interestRate.toFixed(3) + '%';
+  interestResultTd.textContent = '$' + interest;
   newRow.appendChild(amountResultTd);
   newRow.appendChild(rateResultTd);
   newRow.appendChild(interestResultTd);
